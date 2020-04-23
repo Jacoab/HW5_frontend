@@ -19,6 +19,13 @@ export default (state = initialState, action) => {
         case constants.FETCH_MOVIE:
             updated['selectedMovie'] = action.selectedMovie;
             return updated;
+        case constants.SET_REVIEW:
+            updated['selectedReview'] = action.selectedReview;
+            return updated;
+        case constants.FETCH_REVIEWS:
+            updated['reviews'] = action.reviews;
+            updated['selectedReview'] = action.reviews[0];
+            return updated;
         default:
             return state;
     }
